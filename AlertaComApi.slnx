@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/AlertaComApi.Tests.Integration/AlertaComApi.Tests.Integration.csproj" />
+    <Project Path="tests/AlertaComApi.Tests.Unit/AlertaComApi.Tests.Unit.csproj" />
+  </Folder>
+  <Project Path="AlertaComApi.Application/AlertaComApi.Application.csproj" />
+  <Project Path="AlertaComApi.Domain/AlertaComApi.Domain.csproj" />
+  <Project Path="AlertaComApi.Infrastructure/AlertaComApi.Infrastructure.csproj" />
+  <Project Path="AlertaComApi/AlertaComApi.csproj" />
+</Solution>

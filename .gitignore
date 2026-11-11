@@ -1,0 +1,22 @@
+## .NET / Visual Studio / Rider
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+TestResults/
+*.trx
+*.coverage
+
+## Logs & Databases locais
+logs/
+*.log
+*.db
+*.sqlite
+
+## Segredos locais (caso criados futuramente)
+appsettings.Local.json
+.env
