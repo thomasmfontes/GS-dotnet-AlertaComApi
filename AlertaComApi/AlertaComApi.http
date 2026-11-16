@@ -1,0 +1,6 @@
+@AlertaComApi_HostAddress = http://localhost:5208
+
+GET {{AlertaComApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
