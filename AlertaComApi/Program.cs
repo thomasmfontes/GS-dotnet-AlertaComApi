@@ -217,7 +217,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.WebHost.UseUrls("http://0.0.0.0:5208");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5208";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();
 
@@ -248,10 +249,7 @@ app.UseSwaggerUI(c =>
     c.DocumentTitle = "AlertaCom API - Documentação Interativa";
 });
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHttpsRedirection();
-}
+// HTTPS é gerenciado pelo proxy reverso em nuvem (Render) ou Kestrel local em HTTP na porta configurada
 
 app.UseRateLimiter(); // Rate Limiting (Requisito 04)
 
