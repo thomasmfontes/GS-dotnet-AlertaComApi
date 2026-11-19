@@ -233,6 +233,7 @@ using (var scope = app.Services.CreateScope())
 // 11. Pipeline de Middlewares
 // ==========================================
 app.UseCors("AllowAll"); // CORS deve ser o primeiro middleware para responder aos preflights OPTIONS
+app.UseStaticFiles(); // Permite servir as imagens das ocorrências em wwwroot/images
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseMiddleware<CorrelationIdMiddleware>();

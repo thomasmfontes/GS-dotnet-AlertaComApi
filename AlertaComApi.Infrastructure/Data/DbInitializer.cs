@@ -106,7 +106,7 @@ namespace AlertaComApi.Infrastructure.Data
                     endereco: "Av. Professor Luiz Ignácio Anhaia Mello, 1350",
                     bairro: "Vila Prudente",
                     userId: cidadao.Id,
-                    fotoUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600",
+                    fotoUrl: "/images/bueiro-entupido.jpg",
                     idempotencyKey: "SEED-IDEMPOTENCY-001"
                 ),
                 new Ocorrencia(
@@ -119,7 +119,7 @@ namespace AlertaComApi.Infrastructure.Data
                     endereco: "Viaduto Grande São Paulo",
                     bairro: "Vila Prudente",
                     userId: cidadao.Id,
-                    fotoUrl: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=600",
+                    fotoUrl: "/images/alagamento-viaduto.jpg",
                     idempotencyKey: "SEED-IDEMPOTENCY-002"
                 )
                 {
@@ -136,7 +136,7 @@ namespace AlertaComApi.Infrastructure.Data
                     endereco: "Rua Augusta, 1800",
                     bairro: "Consolação",
                     userId: cidadao.Id,
-                    fotoUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600",
+                    fotoUrl: "/images/galho-fiacao.jpg",
                     idempotencyKey: "SEED-IDEMPOTENCY-003"
                 )
                 {
