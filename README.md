@@ -101,9 +101,61 @@ O banco é inicializado automaticamente com dados reais de São Paulo e os segui
 | **Defesa Civil** | `defesacivil` | `123456` | `DefesaCivil` | Sé (Centro) |
 | **Administrador** | `admin` | `123456` | `Admin` | Consolação |
 
+### Como Autenticar no Swagger UI:
+1. Execute `POST /api/auth/login` com um dos usuários acima (ex.: `cidadao` / `123456` ou `defesacivil` / `123456`).
+2. Copie o campo `token` da resposta.
+3. Clique em **Authorize** (cadeado no topo direito do Swagger), cole `{SEU_TOKEN}` (com ou sem `Bearer `) e confirme.
+
 ---
 
-## 💻 6. Como Executar
+## 🧪 6. Payloads JSON para Teste Rápido (Swagger / Postman)
+
+### 1. Login (`POST /api/auth/login`)
+```json
+{
+  "username": "cidadao",
+  "password": "123456"
+}
+```
+
+### 2. Criar Ocorrência (`POST /api/ocorrencias`) — *Requer JWT + Header `Idempotency-Key` opcional*
+```json
+{
+  "titulo": "Alagamento na Av. Anhaia Mello",
+  "descricao": "Água cobrindo toda a faixa da direita próximo ao viaduto.",
+  "tipoRisco": "Alagamento",
+  "severidade": "Alta",
+  "latitude": -23.5874,
+  "longitude": -46.5821,
+  "endereco": "Av. Anhaia Mello, 1500",
+  "bairro": "Vila Prudente"
+}
+```
+
+### 3. Atualizar Status (`PATCH /api/ocorrencias/{id}/status`) — *Requer perfil `DefesaCivil` ou `Admin`*
+```json
+{
+  "novoStatus": "Resolvida",
+  "parecerTecnico": "Equipe de zeladoria realizou a desobstrução dos bueiros."
+}
+```
+
+### 4. Emitir Alerta Climático (`POST /api/alertas`) — *Requer perfil `DefesaCivil` ou `Admin`*
+```json
+{
+  "titulo": "Alerta Laranja: Chuva Intensa na Zona Leste",
+  "mensagem": "Evite áreas de baixada nas próximas 4 horas.",
+  "tipoRisco": "Alagamento",
+  "nivel": "Alta",
+  "regiaoAfetada": "Zona Leste",
+  "bairro": "Vila Prudente",
+  "duracaoHoras": 12
+}
+```
+
+---
+
+## 💻 7. Como Executar
 
 ### 1. Clonar e Rodar a API:
 ```powershell
